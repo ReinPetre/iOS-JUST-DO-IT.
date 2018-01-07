@@ -13,7 +13,7 @@ class TodoCell: UITableViewCell {
         let weekdayFormatter = DateFormatter()
         weekdayFormatter.dateFormat = "EEEE"
         
-        todoDescription.text = todo.description
+        setPriorityColoredUnderline(for: todo, description: todo.description)
         
         if let dueDate = todo.dueDate {
             
@@ -21,10 +21,10 @@ class TodoCell: UITableViewCell {
             let numberOfDaysBetweenDates = daysBetweenDates(startDate: today, endDate: dueDate)
             
             if numberOfDaysBetweenDates <= 7 {
-                setPriorityColoredUnderline(for: todo, dueDate: weekdayFormatter.string(from: dueDate))
+                todoDueDate.text = weekdayFormatter.string(from: dueDate)
             }
             else {
-                setPriorityColoredUnderline(for: todo, dueDate: dayMonthFormatter.string(from: dueDate))
+                todoDueDate.text = dayMonthFormatter.string(from: dueDate)
             }
         }
         else {
@@ -38,9 +38,9 @@ class TodoCell: UITableViewCell {
         return components.day!
     }
     
-    func setPriorityColoredUnderline(for todo: Todo, dueDate: String) {
+    func setPriorityColoredUnderline(for todo: Todo, description: String) {
 
-        let labelString = dueDate
+        let labelString = description
         
         let underLineColor: UIColor
         switch todo.priority {
@@ -59,6 +59,6 @@ class TodoCell: UITableViewCell {
         let underlineAttributedString = NSAttributedString(string: labelString,
                                                            attributes: labelAtributes)
         
-        todoDueDate.attributedText = underlineAttributedString
+        todoDescription.attributedText = underlineAttributedString
     }
 }

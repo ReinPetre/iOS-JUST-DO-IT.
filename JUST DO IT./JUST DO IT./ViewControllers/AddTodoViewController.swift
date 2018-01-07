@@ -61,44 +61,41 @@ class AddTodoViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "didAddTodo" {
-            let description =  todoDescription.text!
-            if description.isEmpty {
+            guard let text = todoDescription.text, !text.isEmpty else {
                 Alert.showBasic(title: "Incomplete Form", message: "Please fill out the descripttion field", vc: self)
                 return
-            } else {
-                todo!.description = todoDescription.text!
-                let priority = Todo.Priority.values[todoPriorityPicker.selectedRow(inComponent: 0)]
-                if dueDateSwitch.isOn {
-                    todo = Todo(description: description, dueDate: todoDueDatePicker.date, priority: priority)
-                }
-                else {
-                    todo = Todo(description: description, priority: priority)
-                }
-                if let comment = todoComment.text, !comment.isEmpty {
-                    todo!.comment = comment
-                }
-                print(todo!.description + " " + todo!.priority.rawValue)
             }
+            let description = todoDescription.text!
+            let priority = Todo.Priority.values[todoPriorityPicker.selectedRow(inComponent: 0)]
+            if dueDateSwitch.isOn {
+                todo = Todo(description: description, dueDate: todoDueDatePicker.date, priority: priority)
+            }
+            else {
+                todo = Todo(description: description, priority: priority)
+            }
+            if let comment = todoComment.text, !comment.isEmpty {
+                todo!.comment = comment
+            }
+            print(todo!.description + " " + todo!.priority.rawValue)
+
         }
         if segue.identifier == "didEditTodo" {
-            let description =  todoDescription.text!
-            if description.isEmpty {
+            guard let text = todoDescription.text, !text.isEmpty else {
                 Alert.showBasic(title: "Incomplete Form", message: "Please fill out the descripttion field", vc: self)
                 return
-            } else {
-                todo!.description = todoDescription.text!
-                if dueDateSwitch.isOn {
-                    todo!.dueDate = todoDueDatePicker.date
-                } else {
-                    todo!.dueDate = nil
-                }
-                let priority = Todo.Priority.values[todoPriorityPicker.selectedRow(inComponent: 0)]
-                todo!.priority = priority
-                if let comment = todoComment.text, !comment.isEmpty {
-                    todo!.comment = comment
-                }
-                print(todo!.description + " " + todo!.priority.rawValue)
             }
+            todo!.description = todoDescription.text!
+            if dueDateSwitch.isOn {
+                todo!.dueDate = todoDueDatePicker.date
+            } else {
+                todo!.dueDate = nil
+            }
+            let priority = Todo.Priority.values[todoPriorityPicker.selectedRow(inComponent: 0)]
+            todo!.priority = priority
+            if let comment = todoComment.text, !comment.isEmpty {
+                todo!.comment = comment
+            }
+            print(todo!.description + " " + todo!.priority.rawValue)
         }
     }
 }

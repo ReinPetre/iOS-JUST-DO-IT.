@@ -19,7 +19,6 @@
 		3775CC241FF2885400C2D453 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3775CC221FF2885400C2D453 /* Main.storyboard */; };
 		3775CC261FF2885400C2D453 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3775CC251FF2885400C2D453 /* Assets.xcassets */; };
 		3775CC291FF2885400C2D453 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3775CC271FF2885400C2D453 /* LaunchScreen.storyboard */; };
-		3775CC361FF29F3200C2D453 /* ProjectDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3775CC351FF29F3200C2D453 /* ProjectDetailViewController.swift */; };
 		37AD737F1FFD253200531791 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AD737E1FFD253200531791 /* RoundedButton.swift */; };
 		37AD73811FFE781F00531791 /* AddTodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AD73801FFE781F00531791 /* AddTodoViewController.swift */; };
 		37C5ABE41FFFB3680061A8C1 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C5ABE31FFFB3680061A8C1 /* Alert.swift */; };
@@ -45,7 +44,6 @@
 		3775CC251FF2885400C2D453 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3775CC281FF2885400C2D453 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3775CC2A1FF2885400C2D453 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3775CC351FF29F3200C2D453 /* ProjectDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailViewController.swift; sourceTree = "<group>"; };
 		37AD737E1FFD253200531791 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		37AD73801FFE781F00531791 /* AddTodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoViewController.swift; sourceTree = "<group>"; };
 		37C5ABE31FFFB3680061A8C1 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
@@ -138,7 +136,6 @@
 			children = (
 				3735F08E1FFBEE980072144F /* InsertViewController.swift */,
 				375759BD1FFD1DC900DB6BB2 /* ProjectListViewController.swift */,
-				3775CC351FF29F3200C2D453 /* ProjectDetailViewController.swift */,
 				3735F0921FFBEFF50072144F /* TodoListViewController.swift */,
 				37AD73801FFE781F00531791 /* AddTodoViewController.swift */,
 				37E45D131FFFD3E400702D36 /* WelcomeViewController.swift */,
@@ -310,7 +307,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3735F0931FFBEFF50072144F /* TodoListViewController.swift in Sources */,
-				3775CC361FF29F3200C2D453 /* ProjectDetailViewController.swift in Sources */,
 				375759BA1FFD030800DB6BB2 /* Project.swift in Sources */,
 				3728BCC51FFCDE0900A9F10B /* ProjectCell.swift in Sources */,
 				3775CC1F1FF2885400C2D453 /* AppDelegate.swift in Sources */,
